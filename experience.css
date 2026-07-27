@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: #0d0d0d;
+    color: white;
+}
+
+/* --- HEADER / NAVBAR --- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background-color: rgba(13, 13, 13, 0.85);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 3rem;
+    color: #b74b4b;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+nav a {
+    font-size: 1.8rem;
+    color: white;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a.active {
+    color: #b74b4b;
+    border-bottom: 3px solid #b74b4b;
+}
+
+/* --- EXPERIENCE SECTION --- */
+section {
+    min-height: 100vh;
+    padding: 12rem 9% 6rem;
+}
+
+.heading {
+    text-align: center;
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin-bottom: 5rem;
+}
+
+span {
+    color: #b74b4b;
+}
+
+.experience-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.experience-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 2.5rem;
+    background-color: #161616;
+    padding: 3rem;
+    border-radius: 2rem;
+    border: 2px solid #222;
+    transition: 0.4s ease;
+}
+
+.experience-box:hover {
+    border-color: #b74b4b;
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(183, 75, 75, 0.3);
+}
+
+.experience-box i {
+    font-size: 4.5rem;
+    color: #b74b4b;
+    background-color: #0d0d0d;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    border: 1px solid #222;
+}
+
+.experience-info h3 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: white;
+}
+
+.experience-info h4 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #b74b4b;
+    margin-top: 0.3rem;
+}
+
+.experience-info .date {
+    display: inline-block;
+    font-size: 1.3rem;
+    color: #888;
+    margin: 0.5rem 0 1.2rem;
+    font-weight: 500;
+}
+
+.experience-info p {
+    font-size: 1.4rem;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    padding: 2.5rem 9%;
+    background-color: #161616;
+    color: #888;
+    font-size: 1.4rem;
+    border-top: 1px solid #222;
+}
+
+/* --- RESPONSIVE LAYOUT --- */
+@media (max-width: 768px) {
+    header {
+        padding: 2rem 5%;
+    }
+
+    nav a {
+        font-size: 1.6rem;
+        margin-left: 2rem;
+    }
+
+    .experience-box {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+/* ========================================== */
+/* FIX EXPERIENCE PAGE KHUSUS HP (768px)      */
+/* ========================================== */
+@media (max-width: 768px) {
+
+    /* Header & Navigasi */
+    header, .header {
+        position: absolute;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        padding: 15px 10px !important;
+        width: 100% !important;
+    }
+
+    .logo, header h1, header .logo-text {
+        font-size: 1.2rem !important;
+        text-align: center !important;
+        margin-bottom: 8px !important;
+    }
+
+    nav, .navbar {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 8px 12px !important;
+        background: transparent !important;
+        border: none !important;
+        position: static !important;
+        width: 100% !important;
+    }
+
+    nav a, .navbar a {
+    position: relative;
+    text-decoration: none;
+}
+
+nav a::after, .navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -2px;
+    left: 50%;
+    background-color: #ff4d4d; /* Warna garis merah kamu */
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+nav a:hover::after, .navbar a:hover::after {
+    width: 100%; /* Garis melebar dari tengah ke samping */
+}
+
+    /* Judul Experience */
+    .heading, h2, .experience-title {
+        font-size: 1.8rem !important;
+        text-align: center !important;
+        margin: 20px 0 15px 0 !important;
+    }
+
+    /* Container & Kartu Experience */
+    .experience-container, .experience-content {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+        padding: 10px 15px !important;
+        width: 100% !important;
+    }
+
+    .experience-box {
+        width: 100% !important;
+        margin: 0 auto !important;
+        padding: 15px !important;
+    }
+}

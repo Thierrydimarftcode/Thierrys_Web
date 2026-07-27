@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: #0d0d0d;
+    color: white;
+}
+
+/* --- HEADER / NAVBAR --- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background-color: rgba(13, 13, 13, 0.85);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 3rem;
+    color: #b74b4b;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+nav a {
+    font-size: 1.8rem;
+    color: white;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a.active {
+    color: #b74b4b;
+    border-bottom: 3px solid #b74b4b;
+}
+
+/* --- EDUCATION TIMELINE SECTION --- */
+section {
+    min-height: 100vh;
+    padding: 12rem 9% 6rem;
+}
+
+.heading {
+    text-align: center;
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin-bottom: 5rem;
+}
+
+span {
+    color: #b74b4b;
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Garis Tengah Timeline */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background-color: #b74b4b;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1.5px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+/* Penataan Kiri dan Kanan */
+.timeline-item:nth-child(odd) {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+    text-align: left;
+}
+
+/* Titik Glowing Merah di Garis */
+.timeline-dot {
+    height: 18px;
+    width: 18px;
+    position: absolute;
+    background-color: #b74b4b;
+    border: 3px solid #0d0d0d;
+    top: 25px;
+    border-radius: 50%;
+    z-index: 1;
+    box-shadow: 0 0 10px #b74b4b;
+}
+
+.timeline-item:nth-child(odd) .timeline-dot {
+    right: -9px;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+    left: -9px;
+}
+
+.timeline-date {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #b74b4b;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content {
+    padding: 2.5rem;
+    background-color: #161616;
+    position: relative;
+    border-radius: 1.5rem;
+    border: 2px solid #222;
+    transition: 0.4s ease;
+}
+
+.timeline-content:hover {
+    border-color: #b74b4b;
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(183, 75, 75, 0.3);
+}
+
+.timeline-content i {
+    font-size: 3rem;
+    color: #b74b4b;
+    margin-bottom: 1rem;
+}
+
+.timeline-content h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+}
+
+.timeline-content h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #b74b4b;
+    margin-bottom: 1rem;
+}
+
+.timeline-content p {
+    font-size: 1.3rem;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    padding: 2.5rem 9%;
+    background-color: #161616;
+    color: #888;
+    font-size: 1.4rem;
+    border-top: 1px solid #222;
+}
+
+/* --- RESPONSIVE LAYOUT (PONSEL & TABLET) --- */
+@media (max-width: 768px) {
+    header {
+        padding: 2rem 5%;
+    }
+
+    nav a {
+        font-size: 1.6rem;
+        margin-left: 2rem;
+    }
+
+    .timeline::after {
+        left: 31px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 20px;
+    }
+
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        left: 0;
+        text-align: left;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-dot,
+    .timeline-item:nth-child(even) .timeline-dot {
+        left: 22px;
+    }
+}
+
+/* ========================================== */
+/* FIX EDUCATION PAGE KHUSUS HP (768px)       */
+/* ========================================== */
+@media (max-width: 768px) {
+
+    /* Header & Navigasi */
+    header, .header {
+        position: absolute;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        padding: 15px 10px !important;
+        width: 100% !important;
+    }
+
+    .logo, header h1, header .logo-text {
+        font-size: 1.2rem !important;
+        text-align: center !important;
+        margin-bottom: 8px !important;
+    }
+
+    nav, .navbar {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 8px 12px !important;
+        background: transparent !important;
+        border: none !important;
+        position: static !important;
+        width: 100% !important;
+    }
+
+    nav a, .navbar a {
+    position: relative;
+    text-decoration: none;
+}
+
+nav a::after, .navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -2px;
+    left: 50%;
+    background-color: #ff4d4d; /* Warna garis merah kamu */
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+nav a:hover::after, .navbar a:hover::after {
+    width: 100%; /* Garis melebar dari tengah ke samping */
+}
+
+    /* Judul 'My Education' */
+    .heading, h2, .education-title {
+        font-size: 1.8rem !important;
+        text-align: center !important;
+        margin: 20px 0 15px 0 !important;
+    }
+
+    /* Fix Timeline & Kartu Sekolah */
+    .education-container, .timeline {
+        padding-left: 25px !important;
+        padding-right: 15px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .timeline::before, .timeline-line {
+        left: 10px !important;
+    }
+
+    .timeline-dot, .dot {
+        left: 3px !important;
+    }
+
+    .education-box, .timeline-item {
+        width: 100% !important;
+        margin-left: 0 !important;
+        padding: 15px !important;
+    }
+}

@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: #0d0d0d;
+    color: white;
+}
+
+/* --- HEADER / NAVBAR --- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background-color: rgba(13, 13, 13, 0.85);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 3rem;
+    color: #b74b4b;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+nav a {
+    font-size: 1.8rem;
+    color: white;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a.active {
+    color: #b74b4b;
+    border-bottom: 3px solid #b74b4b;
+}
+
+/* --- SKILLS SECTION --- */
+section {
+    min-height: 100vh;
+    padding: 12rem 9% 6rem; /* Padding top dikasih ruang buat navbar */
+}
+
+.heading {
+    text-align: center;
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin-bottom: 5rem;
+}
+
+span {
+    color: #b74b4b;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2.5rem;
+    justify-content: center;
+}
+
+.skills-box {
+    background-color: #161616;
+    padding: 3rem 2rem;
+    border-radius: 2rem;
+    text-align: center;
+    border: 2px solid #222;
+    transition: 0.4s ease;
+}
+
+.skills-box:hover {
+    border-color: #b74b4b;
+    transform: translateY(-8px);
+    box-shadow: 0 0 25px #b74b4b;
+}
+
+.skills-box i {
+    font-size: 5rem;
+    color: #b74b4b;
+    margin-bottom: 1.5rem;
+}
+
+.skills-box h3 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.skills-box p {
+    font-size: 1.4rem;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    padding: 2.5rem 9%;
+    background-color: #161616;
+    color: #888;
+    font-size: 1.4rem;
+    border-top: 1px solid #222;
+}
+
+/* --- RESPONSIVE LAYOUT --- */
+@media (max-width: 995px) {
+    header {
+        padding: 2rem 5%;
+    }
+
+    nav a {
+        font-size: 1.6rem;
+        margin-left: 2rem;
+    }
+
+    section {
+        padding: 10rem 5% 5rem;
+    }
+
+    .heading {
+        font-size: 3.5rem;
+    }
+}
+
+/* ========================================== */
+/* FIX TAMPILAN SKILLS KHUSUS LAYAR HP (MOBILE)*/
+/* ========================================== */
+@media (max-width: 768px) {
+
+    header, .header {
+        position: absolute;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        padding: 15px 10px !important;
+        width: 100% !important;
+    }
+
+    .logo, header h1, header .logo-text {
+        font-size: 1.2rem !important;
+        text-align: center !important;
+        margin-bottom: 8px !important;
+    }
+
+    nav, .navbar {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 8px 12px !important;
+        background: transparent !important;
+        border: none !important;
+        position: static !important;
+        width: 100% !important;
+    }
+
+    nav a, .navbar a {
+    position: relative;
+    text-decoration: none;
+}
+
+nav a::after, .navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -2px;
+    left: 50%;
+    background-color: #ff4d4d; /* Warna garis merah kamu */
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+nav a:hover::after, .navbar a:hover::after {
+    width: 100%; /* Garis melebar dari tengah ke samping */
+}
+
+    /* 2. Judul 'My Skills' */
+    .heading, h2, .skills-title {
+        font-size: 1.8rem !important;
+        text-align: center !important;
+        margin: 20px 0 10px 0 !important;
+    }
+
+    /* 3. Kartu Skills Biar Rapi Turun Ke Bawah */
+    .skills-container, .skills-content {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 15px !important;
+        padding: 10px 20px !important;
+        width: 100% !important;
+    }
+
+    .skills-box {
+        width: 100% !important;
+        margin: 0 auto !important;
+    }
+}
