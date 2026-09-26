@@ -171,78 +171,77 @@ footer {
     }
 }
 
+.menu-icon {
+    display: none;
+    font-size: 2.8rem;
+    color: #b74b4b;
+    cursor: pointer;
+}
+
 /* ========================================== */
 /* FIX EXPERIENCE PAGE KHUSUS HP (768px)      */
 /* ========================================== */
 @media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
 
-    /* Header & Navigasi */
-    header, .header {
-        position: absolute;
+    /* Header melayang rapi di atas */
+    header {
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        width: 100%;
         display: flex !important;
-        flex-direction: column !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
         align-items: center !important;
-        padding: 15px 10px !important;
+        padding: 1.5rem 5% !important;
+        background-color: rgba(0, 0, 0, 0.9) !important;
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+    }
+
+    /* Menu disembunyikan ke atas secara default */
+    nav, #navbar {
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
         width: 100% !important;
-    }
-
-    .logo, header h1, header .logo-text {
-        font-size: 1.2rem !important;
-        text-align: center !important;
-        margin-bottom: 8px !important;
-    }
-
-    nav, .navbar {
-        display: flex !important;
-        flex-wrap: wrap !important;
-        justify-content: center !important;
-        gap: 8px 12px !important;
-        background: transparent !important;
-        border: none !important;
-        position: static !important;
-        width: 100% !important;
-    }
-
-    nav a, .navbar a {
-    position: relative;
-    text-decoration: none;
-}
-
-nav a::after, .navbar a::after {
-    content: '';
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    bottom: -2px;
-    left: 50%;
-    background-color: #ff4d4d; /* Warna garis merah kamu */
-    transition: all 0.3s ease;
-    transform: translateX(-50%);
-}
-
-nav a:hover::after, .navbar a:hover::after {
-    width: 100%; /* Garis melebar dari tengah ke samping */
-}
-
-    /* Judul Experience */
-    .heading, h2, .experience-title {
-        font-size: 1.8rem !important;
-        text-align: center !important;
-        margin: 20px 0 15px 0 !important;
-    }
-
-    /* Container & Kartu Experience */
-    .experience-container, .experience-content {
-        display: flex !important;
+        padding: 1.5rem 5% !important;
+        background-color: #111111 !important;
+        border-top: 1px solid #b74b4b !important;
+        border-bottom: 2px solid #b74b4b !important;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.7);
+        display: none !important; /* Menu tersembunyi */
         flex-direction: column !important;
-        gap: 15px !important;
-        padding: 10px 15px !important;
-        width: 100% !important;
+        gap: 1.2rem !important;
     }
 
-    .experience-box {
-        width: 100% !important;
-        margin: 0 auto !important;
-        padding: 15px !important;
+    /* Menu muncul saat class 'active' aktif lewat klik JS */
+    nav.active, #navbar.active {
+        display: flex !important;
+    }
+
+    nav a, #navbar a {
+        font-size: 1.6rem !important;
+        display: block !important;
+        text-align: center !important;
+        padding: 8px 0 !important;
+        margin: 0 !important;
+    }
+
+    /* Beri ruang atas untuk section agar tidak tertutup header fixed */
+    section, .home, .skills, .education, .experience, .more-about {
+        padding-top: 110px !important;
+    }
+
+    /* Penyesuaian foto profil di HP */
+    .home-img img, .hero-img img {
+        width: 190px !important;
+        height: 190px !important;
+        margin: 10px auto 20px !important;
+        object-fit: cover !important;
+        object-position: center 20% !important;
     }
 }
